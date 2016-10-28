@@ -6,30 +6,35 @@ function validateForm(){
 	var password  = document.getElementById('input-password');
 
 	//validacion
-	if ( name.hasAttribute("required") == false) {
+	/*if ( name.hasAttribute("required") == false) {
 		alert("ERROR: El campo NOMBRE es obligatorio.");
 		return false;
-	} else if (nombre){
-		alert("");
-		return false;
-
 	} else if ( lastname.hasAttribute("required") == false) {
 		alert("ERROR: El campo APELLIDO es obligatorio.");
 		return false;
-	} else if (apellido) {
-		alert("");
-		return false;
-
 	} else if ( email.hasAttribute("required") == false) {
 		alert("ERROR: El campo CORREO ELECTRÓNICO es obligatorio.");
 		return false;
+	} else if ( password.hasAttribute("required") == false) {
+		alert("ERROR: El campo CONTRASEÑA es obligatorio.");
+		return false;
+	} */
+		if (!/^[a-zA-Z]+$/i.test(name.value)){
+		alert("El nombre debe contener solo letras");
+		return false;
+
+	}  else if (/^[a-z]/.test(name.value)) {
+		alert("La primera letra del nombre debe ser mayuscula");
+		return false;
+		
+	}	else if (apellido) {
+		alert("");
+		return false;
+
 	} else if (email){
 		alert("");
 		return false;
 
-	} else if ( password.hasAttribute("required") == false) {
-		alert("ERROR: El campo CONTRASEÑA es obligatorio.");
-		return false;
 	} else if (pass mayor a 6 caracteres) {
 		alert("");
 		return false;
