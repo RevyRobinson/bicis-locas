@@ -1,41 +1,46 @@
 function validateForm(){
 	//setear varialbes de los input para que sea mas sencillo ocuparlos despues
-	var name = document.getElementById('name');
-	var lastname = document.getElementById('lastname');
-	var email = document.getElementById('input-email');
-	var password  = document.getElementById('input-password');
+	var name = document.getElementById('name').value;
+	var lastname = document.getElementById('lastname').value;
+	var email = document.getElementById('input-email').value;
+	var password  = document.getElementById('input-password').value;
 
 	//validacion
-	/*if ( name.hasAttribute("required") == false) {
+	if (name.length == 0) {
 		alert("ERROR: El campo NOMBRE es obligatorio.");
 		return false;
-	} else if ( lastname.hasAttribute("required") == false) {
+	} else if ( lastname.length == 0) {
 		alert("ERROR: El campo APELLIDO es obligatorio.");
 		return false;
-	} else if ( email.hasAttribute("required") == false) {
+	} else if ( email.length == 0) {
 		alert("ERROR: El campo CORREO ELECTRÓNICO es obligatorio.");
 		return false;
-	} else if ( password.hasAttribute("required") == false) {
+	} else if ( password.length == 0) {
 		alert("ERROR: El campo CONTRASEÑA es obligatorio.");
 		return false;
-	} */
+	} 
 		if (!/^[a-zA-Z]+$/i.test(name.value)){
 		alert("El nombre debe contener solo letras");
 		return false;
 
-	}  else if (/^[a-z]/.test(name.value)) {
+	}  else if (!/^[a-z]/.test(name.value)) {
 		alert("La primera letra del nombre debe ser mayuscula");
 		return false;
+
+	}	else if (!/^[a-zA-Z]+$/i.test(lastname.value)){
+		alert("El apellido debe contener solo letras");
+		return false;
+
+	}  else if (!/^[a-z]/.test(lastname.value)) {
+		alert("La primera letra del apellido debe ser mayuscula");
+		return false;
 		
-	}	else if (apellido) {
+	} /*else if (/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email.value){
 		alert("");
 		return false;
 
-	} else if (email){
-		alert("");
-		return false;
-
-	} else if (pass mayor a 6 caracteres) {
+	} 
+	else if (pass mayor a 6 caracteres) {
 		alert("");
 		return false;
 
@@ -46,7 +51,10 @@ function validateForm(){
 	} else if (bicis){
 		alert("");
 		return false;
-	}
+	}*/
 
 	return true;
 }
+
+
+
